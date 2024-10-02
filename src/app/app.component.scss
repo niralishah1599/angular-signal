@@ -1,0 +1,40 @@
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+.price-summary {
+    width: 20%; /* Match the table's width */
+    margin: 20px auto; /* Center the summary */
+    padding: 15px; /* Add padding inside the summary */
+    background-color: #f9f9f9; /* Light background for visibility */
+    border-radius: 5px; /* Optional rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.price-summary h3 {
+    margin: 0 0 10px 0; /* Margin below the heading */
+}
+
+.price-row {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between label and value */
+    padding: 5px 0; /* Padding between rows */
+}
+
+.price-row span {
+    font-size: 16px; /* Font size for the text */
+}
+
+/* Optional: Change color for totals */
+.price-row:last-child span {
+    font-weight: bold; /* Bold for the total */
+}
