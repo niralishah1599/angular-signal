@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
@@ -45,6 +45,12 @@ export class AppComponent {
     return this.subTotal() - this.totalDiscount()
   })
    
+  constructor() {
+    effect(()=>{
+      // this.products.set([])
+      console.log(this.products())
+    },{allowSignalWrites:true})
+  }
 
   onQuantitySelected(product:Product){
    this.products.update(products => {
@@ -52,8 +58,11 @@ export class AppComponent {
       p.id == product.id ? {...p, quantity: product.quantity} : {...p}
     )
    })
+ 
+   
   }
 
 
 
 }
+
